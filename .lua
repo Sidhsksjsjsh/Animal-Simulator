@@ -1374,13 +1374,9 @@ T5:Button("Create Raider pack",function()
 end)
 
 local Invitedelay = 0.3
-Page_5:CreateToggle("Spam Invite", false, function(Value)
-    if Value == true then
-        Spam = true
-    else
-        Spam = false
-    end
-
+T5:Toggle("Spam invite",false,function(value)
+    Spam = value
+    
 
     local Player = game.Players.LocalPlayer
     local TeamGUI = Player.PlayerGui.TeamGUI
