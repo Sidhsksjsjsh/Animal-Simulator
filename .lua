@@ -1,5 +1,7 @@
 ---WAITS UNTIL CHARACTER AND GAME IS FULLY LOADED
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sidhsksjsjsh/VAPE-UI-MODDED/main/.lua"))()
 
+local isrunning,error = pcall(function()
 repeat wait() until game:IsLoaded()
 
 
@@ -508,7 +510,6 @@ end)
 
 
 -- [[ UI Library Setup ]]
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sidhsksjsjsh/VAPE-UI-MODDED/main/.lua"))()
 local wndw = lib:Window("VIP Turtle Hub V4")
 local T1 = wndw:Tab("Main")
 
@@ -1457,3 +1458,7 @@ T5:Toggle("Spam invite",false,function(value)
         wait(.3)
     end
 end)
+end)
+if not isrunning then
+	lib:notify(lib:ColorFonts(error,"Red"),10)
+end
